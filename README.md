@@ -9,7 +9,7 @@ Then, it asks you which student's info you want.
 Takes that student's details from the database, and then prints: total marks, %age, avg, GPA, result (pass, fail, etc).
 
 
-#Technology Stack:
+# Technology Stack:
 1. Operating System- Mac OS X
 2. Language - Python
 3. DBMS - PostgreSQL
