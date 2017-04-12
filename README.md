@@ -10,6 +10,6 @@ Takes that student's details from the database, and then prints: total marks, %a
 
 
 # Technology Stack:
-1. Operating System- Mac OS X
-2. Language - Python
-3. DBMS - PostgreSQL
+1. Operating System: macOS
+2. Language: Python
+3. DBMS: PostgreSQL
