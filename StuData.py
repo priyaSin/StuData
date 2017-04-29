@@ -4,12 +4,8 @@
 import psycopg2
 conn = psycopg2.connect(database="postgres", user="postgres", password="postgres")
 cursor = conn.cursor()
-
-def add_stu:
-	
-
 def main(args):
-	<ask the user options>
+    option=raw_input ("Select from the options below: \n 1.Adding Student Data \n 2. Fetching Student Record")
 	if option=1:
 		add_stu()
 	elif option=2:

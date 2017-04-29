@@ -7,17 +7,29 @@ print "Opened database successfully"
 
 cur = conn.cursor()
 
-cur.execute("SELECT ID, NAME, MATHS , SCIENCE, SOCIAL_SCIENCE,HINDI,ENGLISH,COMPUTER_SCIENCE  from STUDATA")
+id=raw_input("Enter ID of the student:")
+
+cur.execute("SELECT ID, NAME, MATHS, SCIENCE, ENGLISH, HINDI, SOCIAL_SCIENCE,\
+COMPUTER_SCIENCE, MATHS_MAX, SCIENCE_MAX, ENGLISH_MAX, HINDI_MAX, SOCIAL_SCIENCE_MAX,\
+COMPUTER_SCIENCE_MAX  from STUDATA WHERE ID=%s", id)
 rows = cur.fetchall()
 for row in rows:
    print "ID = ", row[0]
    print "NAME = ", row[1]
-   print "MATHS = ", row[2]
-   print "SCIENCE = ", row[3]
-   print "SOCIAL_SCIENCE = ", row[4]
-   print "HINDI = ", row[5]
-   print "ENGLISH = ", row[6]
-   print "COMPUTER_SCIENCE = ", row[7], "\n"
+   totalMarks= row[2]+row[3]+row[4]+row[5]+row[6]+row[7]
+   maxMarks=row[8]+row[9]+row[10]+row[11]+row[12]+row[13]
+   per= totalMarks/maxMarks
+   avg= totalMarks/6
+   if per < 33:
+   	result= "Pass"
+   else:
+    result= "Fail"
+   gpa= (per/20)-1	
+   print "TOTAL MARKS = " ,total
+   print "PERCENTAGE = " ,per
+   print "AVERAGE = " ,avg
+   print "GPA = ",gpa
+   print "RESULT = ", result
 
 print "Operation done successfully";
 conn.close()
