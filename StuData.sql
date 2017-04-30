@@ -1,3 +1,4 @@
+/* This code was used to create the table: */
 CREATE TABLE STUDATA {
 ID INT PRIMARY KEY NOT NULL,
 NAME CHAR(50) NOT NULL,

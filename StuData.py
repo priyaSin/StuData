@@ -9,9 +9,9 @@ def add_stu():
 def fetch_stu():
 	os.system("Fetch_Stu.py")
 def main(args):
-    option=raw_input ("Select from the options below: \n 1.Adding Student Data \n 2. Fetching Student Record")
-	if option=1:
+	option=raw_input("Select from the options below: \n 1.Adding Student Data \n 2. Fetching Student Record")
+	if option==1:
 		add_stu()
-	elif option=2:
+	elif option==2:
 		fetch_stu()
-    return 0
+	return 0
