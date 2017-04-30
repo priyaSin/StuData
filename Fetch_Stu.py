@@ -1,17 +1,16 @@
 #!/usr/bin/python
-
+'''input
+055
+'''
 import psycopg2
 
 conn = psycopg2.connect(database="postgres", user="postgres", password="postgres")
 print "Opened database successfully"
 
 cur = conn.cursor()
-
 id=raw_input("Enter ID of the student:")
-
-cur.execute("SELECT ID, NAME, MATHS, SCIENCE, ENGLISH, HINDI, SOCIAL_SCIENCE,\
-COMPUTER_SCIENCE, MATHS_MAX, SCIENCE_MAX, ENGLISH_MAX, HINDI_MAX, SOCIAL_SCIENCE_MAX,\
-COMPUTER_SCIENCE_MAX  from STUDATA WHERE ID=%s", id)
+roll_no = (id,)
+cur.execute("SELECT *  from STUDATA WHERE ID=%s",roll_no)
 rows = cur.fetchall()
 for row in rows:
    print "ID = ", row[0]
@@ -25,7 +24,7 @@ for row in rows:
    else:
     result= "Fail"
    gpa= (per/20)-1	
-   print "TOTAL MARKS = " ,total
+   print "TOTAL MARKS = " ,totalMarks
    print "PERCENTAGE = " ,per
    print "AVERAGE = " ,avg
    print "GPA = ",gpa
@@ -33,3 +32,5 @@ for row in rows:
 
 print "Operation done successfully";
 conn.close()
+if __name__ == "__main__":
+    main()

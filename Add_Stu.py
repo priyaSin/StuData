@@ -17,3 +17,5 @@ for line in StuData:
 	conn.commit()
 
 StuData.close()
+if __name__ == "__main__":
+    main()
