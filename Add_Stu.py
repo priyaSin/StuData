@@ -1,10 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-import psycopg2
-conn = psycopg2.connect(database="postgres", user="postgres", password="postgres")
-cursor = conn.cursor()
-
+import StuData_Connect
 
 StuData = open("StuData.csv","r")
 
@@ -17,5 +13,3 @@ for line in StuData:
 	conn.commit()
 
 StuData.close()
-if __name__ == "__main__":
-    main()

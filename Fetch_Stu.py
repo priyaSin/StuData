@@ -1,17 +1,11 @@
 #!/usr/bin/python
-'''input
-055
-'''
-import psycopg2
+# -*- coding: utf-8 -*-
+import StuData_Connect
 
-conn = psycopg2.connect(database="postgres", user="postgres", password="postgres")
-print "Opened database successfully"
-
-cur = conn.cursor()
 id=raw_input("Enter ID of the student:")
 roll_no = (id,)
-cur.execute("SELECT *  from STUDATA WHERE ID=%s",roll_no)
-rows = cur.fetchall()
+cursor.execute("SELECT *  from STUDATA WHERE ID=%s",roll_no)
+rows = cursor.fetchall()
 for row in rows:
    print "ID = ", row[0]
    print "NAME = ", row[1]
@@ -32,5 +26,3 @@ for row in rows:
 
 print "Operation done successfully";
 conn.close()
-if __name__ == "__main__":
-    main()
